@@ -1,0 +1,7 @@
+# Format: item_id,name,price,category,description
+1,Classic Burger,12.99,Main Course,Beef patty with lettuce, tomato, and special sauce
+2,Margherita Pizza,14.99,Main Course,Traditional pizza with tomato sauce and mozzarella
+3,Caesar Salad,8.99,Appetizer,Fresh romaine lettuce, croutons, and parmesan cheese
+4,Chocolate Cake,6.99,Dessert,Rich chocolate cake with ganache
+5,French Fries,4.99,Side,Golden crispy fries with seasoning
+6,Ice Cream,5.99,Dessert,Vanilla ice cream with choice of toppings

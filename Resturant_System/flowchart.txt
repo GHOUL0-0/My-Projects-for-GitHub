@@ -1,0 +1,185 @@
+RESTAURANT MANAGEMENT SYSTEM FLOWCHART
+
+[Start]
+    │
+    ▼
++------------------+
+|   Welcome Screen  |
++------------------+
+    │
+    ▼
++------------------+
+|   Auth Menu      |
++------------------+
+    │
+    ├─── Login ────┐
+    │              │
+    ├─── Signup ───┤
+    │              │
+    └─── Exit ─────┘
+    │
+    ▼
++------------------+
+|   Login Process  |
++------------------+
+    │
+    ├─── Success ──┐
+    │              │
+    └─── Failed ───┘
+    │              │
+    ▼              ▼
++------------------+  +------------------+
+|   Role Selection  |  |  Invalid Login  |
++------------------+  +------------------+
+    │                      │
+    ├─── Admin ───────────┤
+    │                      │
+    ├─── Manager ─────────┤
+    │                      │
+    ├─── Chef ────────────┤
+    │                      │
+    └─── Customer ────────┘
+    │
+    ▼
++------------------+
+|   Role Menus     |
++------------------+
+    │
+    ├─── Admin Menu ──────┐
+    │                     │
+    ├─── Manager Menu ────┤
+    │                     │
+    ├─── Chef Menu ───────┤
+    │                     │
+    └─── Customer Menu ───┘
+    │                     │
+    ▼                     ▼
++------------------+  +------------------+
+|  Role Functions  |  |  Logout/Exit    |
++------------------+  +------------------+
+    │                     │
+    └─────────────────────┘
+    │
+    ▼
+[End]
+
+DETAILED SUB-FLOWCHARTS:
+
+1. AUTHENTICATION FLOW:
+[Start]
+    │
+    ▼
++------------------+
+|   Login/Signup   |
++------------------+
+    │
+    ├─── Login ────┐
+    │              │
+    └─── Signup ───┘
+    │              │
+    ▼              ▼
++------------------+  +------------------+
+|  Check Credentials|  |  Input Details  |
++------------------+  +------------------+
+    │                      │
+    ├─── Valid ───────────┤
+    │                      │
+    └─── Invalid ─────────┘
+    │                      │
+    ▼                      ▼
+[Return Role]        [Save to File]
+
+2. ADMIN FLOW:
+[Start]
+    │
+    ▼
++------------------+
+|   Admin Menu     |
++------------------+
+    │
+    ├─── View Sales ──────┐
+    │                     │
+    ├─── View Feedback ───┤
+    │                     │
+    ├─── Manage Staff ────┤
+    │                     │
+    ├─── Update Profile ──┤
+    │                     │
+    └─── Logout ──────────┘
+    │                     │
+    ▼                     ▼
+[Process Request]    [Return to Main]
+
+3. MANAGER FLOW:
+[Start]
+    │
+    ▼
++------------------+
+|   Manager Menu   |
++------------------+
+    │
+    ├─── View Menu ───────┐
+    │                     │
+    ├─── Add Dish ────────┤
+    │                     │
+    ├─── Edit Dish ───────┤
+    │                     │
+    ├─── Delete Dish ─────┤
+    │                     │
+    ├─── View Orders ─────┤
+    │                     │
+    ├─── Update Profile ──┤
+    │                     │
+    └─── Logout ──────────┘
+    │                     │
+    ▼                     ▼
+[Process Request]    [Return to Main]
+
+4. CHEF FLOW:
+[Start]
+    │
+    ▼
++------------------+
+|   Chef Menu      |
++------------------+
+    │
+    ├─── View Orders ─────┐
+    │                     │
+    ├─── Update Status ───┤
+    │                     │
+    ├─── Update Profile ──┤
+    │                     │
+    └─── Logout ──────────┘
+    │                     │
+    ▼                     ▼
+[Process Request]    [Return to Main]
+
+5. CUSTOMER FLOW:
+[Start]
+    │
+    ▼
++------------------+
+|   Customer Menu  |
++------------------+
+    │
+    ├─── View Menu ───────┐
+    │                     │
+    ├─── Place Order ─────┤
+    │                     │
+    ├─── View History ────┤
+    │                     │
+    ├─── Give Feedback ───┤
+    │                     │
+    ├─── Update Profile ──┤
+    │                     │
+    └─── Logout ──────────┘
+    │                     │
+    ▼                     ▼
+[Process Request]    [Return to Main]
+
+NOTES:
+1. Each menu option leads to specific functions
+2. All paths eventually return to main menu or exit
+3. Error handling exists at each decision point
+4. Data validation occurs at input points
+5. File operations are performed where needed 

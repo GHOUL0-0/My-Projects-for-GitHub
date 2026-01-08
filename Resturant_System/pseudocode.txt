@@ -1,0 +1,145 @@
+RESTAURANT MANAGEMENT SYSTEM PSEUDOCODE
+
+1. MAIN PROGRAM (main.py)
+   FUNCTION main():
+       DISPLAY welcome message
+       WHILE True:
+           CALL authMenu()
+           IF user chooses login:
+               CALL login()
+               IF login successful:
+                   SWITCH user_role:
+                       CASE "admin":
+                           CALL admin.menu()
+                       CASE "manager":
+                           CALL manager.menu()
+                       CASE "chef":
+                           CALL chef.menu()
+                       CASE "customer":
+                           CALL customer.menu()
+                       DEFAULT:
+                           DISPLAY "Invalid role"
+               ELSE:
+                   DISPLAY "Login failed"
+           ELSE IF user chooses signup:
+               CALL signup()
+           ELSE IF user chooses exit:
+               EXIT program
+           ELSE:
+               DISPLAY "Invalid choice"
+
+2. AUTHENTICATION MODULE (auth.py)
+   FUNCTION login():
+       GET username and password
+       CHECK credentials in staff.txt and customer.txt
+       IF credentials valid:
+           RETURN user role and name
+       ELSE:
+           RETURN None
+
+   FUNCTION signup():
+       DISPLAY signup menu
+       IF staff signup:
+           GET staff details (name, email, phone, password, role)
+           VALIDATE all inputs
+           SAVE to staff.txt
+       ELSE IF customer signup:
+           GET customer details (name, email, phone, password)
+           VALIDATE all inputs
+           SAVE to customer.txt
+
+3. ADMIN MODULE (admin.py)
+   FUNCTION adminMenu():
+       WHILE True:
+           DISPLAY admin options:
+               1. View Sales Report
+               2. View Feedback
+               3. Manage Staff
+               4. Update Profile
+               5. Logout
+           GET user choice
+           SWITCH choice:
+               CASE 1: CALL viewSalesReport()
+               CASE 2: CALL viewFeedback()
+               CASE 3: CALL manageStaff()
+               CASE 4: CALL updateProfile()
+               CASE 5: RETURN to main menu
+               DEFAULT: DISPLAY "Invalid choice"
+
+4. MANAGER MODULE (manager.py)
+   FUNCTION managerMenu():
+       WHILE True:
+           DISPLAY manager options:
+               1. View Menu
+               2. Add Dish
+               3. Edit Dish
+               4. Delete Dish
+               5. View Orders
+               6. Update Profile
+               7. Logout
+           GET user choice
+           SWITCH choice:
+               CASE 1: CALL viewMenu()
+               CASE 2: CALL addDish()
+               CASE 3: CALL editDish()
+               CASE 4: CALL deleteDish()
+               CASE 5: CALL viewOrders()
+               CASE 6: CALL updateProfile()
+               CASE 7: RETURN to main menu
+               DEFAULT: DISPLAY "Invalid choice"
+
+5. CHEF MODULE (chef.py)
+   FUNCTION chefMenu():
+       WHILE True:
+           DISPLAY chef options:
+               1. View Orders
+               2. Update Order Status
+               3. Update Profile
+               4. Logout
+           GET user choice
+           SWITCH choice:
+               CASE 1: CALL viewOrders()
+               CASE 2: CALL updateOrderStatus()
+               CASE 3: CALL updateProfile()
+               CASE 4: RETURN to main menu
+               DEFAULT: DISPLAY "Invalid choice"
+
+6. CUSTOMER MODULE (customer.py)
+   FUNCTION customerMenu():
+       WHILE True:
+           DISPLAY customer options:
+               1. View Menu
+               2. Place Order
+               3. View Order History
+               4. Give Feedback
+               5. Update Profile
+               6. Logout
+           GET user choice
+           SWITCH choice:
+               CASE 1: CALL viewMenu()
+               CASE 2: CALL placeOrder()
+               CASE 3: CALL viewOrderHistory()
+               CASE 4: CALL giveFeedback()
+               CASE 5: CALL updateProfile()
+               CASE 6: RETURN to main menu
+               DEFAULT: DISPLAY "Invalid choice"
+
+DATA STRUCTURES:
+1. Files:
+   - staff.txt: [name, email, phone, password, role]
+   - customer.txt: [name, email, phone, password]
+   - menu.txt: [dish_name, price, category]
+   - orders.txt: [order_id, customer_name, dish, price, chef, order_date, status]
+   - feedback.txt: [customer_name, feedback_text, date]
+
+2. Variables:
+   - user_role: string (admin/manager/chef/customer)
+   - user_name: string
+   - order_status: string (Pending/In Progress/Completed)
+
+VALIDATION RULES:
+1. Email: Must contain @ and domain
+2. Phone: Must be 10 digits
+3. Password: Minimum 4 characters
+4. Role: Must be one of [admin, manager, chef, customer]
+5. Price: Must be positive number 

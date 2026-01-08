@@ -1,0 +1,5 @@
+# Format: name,email,phone,password,role
+John Manager,john@restaurant.com,9876543210,manager123,manager
+Sarah Chef,sarah@restaurant.com,9876543211,chef123,chef
+Mike Chef,mike@restaurant.com,9876543212,chef456,chef
+Pablo Manager,Pablo@resturant.com,9876324545,pablo123,manager

@@ -1,0 +1,5 @@
+# Format: name,email,phone,password,role
+Alice Smith,alice@email.com,1234567890,alice123,customer
+Bob Johnson,bob@email.com,1234567891,bob123,customer
+Emma Wilson,emma@email.com,1234567892,emma123,customer
+Asad Jawed,Asad@gmail.com,9843736946,asad123,customer
